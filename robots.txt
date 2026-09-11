@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://psyche-recommends-money-tools.navy-chime-1480.chatgpt.site/sitemap.xml
