@@ -1,6 +1,6 @@
 # Psyche Recommends affiliate guide prototype
 
-This static site is prepared for publication. The supplied Cash App referral URL is configured. Ally uses its official Spending Account product page and is explicitly labeled non-affiliate until an approved personal tracking URL is supplied.
+This static site is published. The supplied Cash App and Ally referral URLs are configured, and both pages carry nearby referral disclosures.
 
 ## Product direction
 
@@ -25,11 +25,11 @@ Add approved tracking URLs only in `app.js`:
 ```js
 const affiliateLinks = {
   cashApp: 'https://cash.app/refer/91M4MR9',
-  ally: 'https://www.ally.com/bank/interest-checking-account/'
+  ally: 'https://ally.com/referral?code=2J5X2J2J7B&CP=WebAppReferFriend'
 };
 ```
 
-Configured links open in a new tab. The Cash App referral receives `rel="sponsored noopener"`; the non-compensated official Ally link receives `rel="noopener"`. If a personal Ally tracking URL is supplied later, replace the URL, add `sponsored` to its relationship, and restore an affiliate disclosure before republishing.
+Configured links open in a new tab and receive `rel="sponsored noopener"`. Each referral page discloses possible compensation directly beside both calls to action.
 
 ## Current facts represented
 

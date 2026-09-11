@@ -1,6 +1,6 @@
 const affiliateLinks = {
   cashApp: 'https://cash.app/refer/91M4MR9',
-  ally: 'https://www.ally.com/bank/interest-checking-account/'
+  ally: 'https://ally.com/referral?code=2J5X2J2J7B&CP=WebAppReferFriend'
 };
 
 document.querySelectorAll('.affiliate-link').forEach((link) => {
@@ -10,7 +10,7 @@ document.querySelectorAll('.affiliate-link').forEach((link) => {
   if (destination) {
     link.href = destination;
     link.target = '_blank';
-    link.rel = key === 'cashApp' ? 'sponsored noopener' : 'noopener';
+    link.rel = 'sponsored noopener';
     return;
   }
 
