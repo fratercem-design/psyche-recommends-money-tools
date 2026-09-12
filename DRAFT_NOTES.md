@@ -1,6 +1,6 @@
 # Psyche Recommends affiliate guide prototype
 
-This static site is published. The supplied Cash App and Ally referral URLs are configured, and both pages carry nearby referral disclosures.
+This static site is published. The supplied Cash App and Ally referral URLs are configured, and every referral call to action carries a nearby disclosure.
 
 ## Product direction
 
@@ -16,7 +16,9 @@ The financial pages stay independent and plainspoken. Cult lore is part of the p
 
 - `cash-app-streamers.html` helps livestreamers create one copy-ready payment panel for tips, moderator payments, or giveaways.
 - `ally-creator-cashflow.html` helps creators understand Ally CoverDraft eligibility, exclusions, and recovery timing.
-- `index.html` is a small routing hub, not the primary SEO landing page.
+- `how-to-add-cash-app-to-twitch.html` targets a specific setup question with official Twitch instructions and a custom panel-copy generator.
+- `index.html` routes readers to the focused search landing pages.
+- `about.html` and `editorial-standards.html` explain authorship, sourcing, referral compensation, updates, and corrections.
 
 ## Link gate
 
@@ -39,7 +41,7 @@ Configured links open in a new tab and receive `rel="sponsored noopener"`. Each 
 - Ally says future deposits apply to a negative balance and generally provides 14 days to restore it.
 - CoverDraft is not a line of credit or a guarantee, and several transaction types are not covered.
 
-Provider-language review date in page copy: September 11, 2026.
+Provider-language review date in page copy: September 12, 2026.
 
 ## Verification gate
 
@@ -51,3 +53,13 @@ Provider-language review date in page copy: September 11, 2026.
 6. Replace placeholders only with approved tracking URLs and re-run the checks.
 
 The information architecture also follows the public LandingForge Kimi/Codex workflow: outcome-first hero, one target action, a useful product surface, objection handling, conspicuous disclosure, and an explicit verification loop.
+
+## Traffic foundation added September 12, 2026
+
+- Search-matched titles, descriptions, and H1s on the hub and product guides.
+- A standalone Twitch panel setup guide and in-browser copy generator.
+- Visible editorial authorship and current provider-review dates.
+- About and editorial/referral standards pages.
+- Article, breadcrumb, site, and trust-page structured data.
+- Open Graph and Twitter card metadata using `social-card.png`.
+- Accurate sitemap modification dates for every public page.
