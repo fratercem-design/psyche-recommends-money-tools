@@ -67,3 +67,57 @@ document.querySelectorAll('[data-eligibility]').forEach((button) => {
     if (result) result.textContent = eligibilityCopy[button.dataset.eligibility];
   });
 });
+
+const panelBuilder = document.querySelector('#panel-builder-form');
+if (panelBuilder) {
+  const streamName = document.querySelector('#stream-name');
+  const cashtag = document.querySelector('#cashtag');
+  const wording = document.querySelector('#support-wording');
+  const output = document.querySelector('#generated-panel-copy');
+
+  const cleanCashtag = (value) => {
+    const cleaned = value.trim().replace(/\s+/g, '');
+    if (!cleaned) return '$yourhandle';
+    return cleaned.startsWith('$') ? cleaned : `$${cleaned}`;
+  };
+
+  const renderPanelCopy = () => {
+    const name = streamName?.value.trim();
+    const handle = cleanCashtag(cashtag?.value || '');
+    const labels = {
+      support: 'Support the stream',
+      tip: 'Send a tip',
+      community: 'Support the community'
+    };
+    const heading = labels[wording?.value] || labels.support;
+    const channelLine = name ? ` for ${name}` : '';
+    const plainText = `${heading}${channelLine}\nCash App: ${handle}\nBefore sending, confirm the profile name and amount. I will never ask for your PIN or sign-in code.`;
+
+    if (output) {
+      output.textContent = plainText;
+      output.dataset.plainText = plainText;
+    }
+    const status = document.querySelector('#generated-copy-status');
+    if (status) status.textContent = '';
+  };
+
+  panelBuilder.addEventListener('input', renderPanelCopy);
+  panelBuilder.addEventListener('change', renderPanelCopy);
+  renderPanelCopy();
+}
+
+const generatedCopyButton = document.querySelector('#copy-generated-panel');
+if (generatedCopyButton) {
+  generatedCopyButton.addEventListener('click', async () => {
+    const output = document.querySelector('#generated-panel-copy');
+    const panelText = output?.dataset.plainText || output?.textContent || '';
+    const status = document.querySelector('#generated-copy-status');
+
+    try {
+      await navigator.clipboard.writeText(panelText);
+      if (status) status.textContent = 'Copied. Test the link on your public Twitch channel before going live.';
+    } catch {
+      if (status) status.textContent = 'Select the panel text above and copy it manually.';
+    }
+  });
+}
