@@ -63,3 +63,11 @@ The information architecture also follows the public LandingForge Kimi/Codex wor
 - Article, breadcrumb, site, and trust-page structured data.
 - Open Graph and Twitter card metadata using `social-card.png`.
 - Accurate sitemap modification dates for every public page.
+
+## Topic cluster prepared September 12, 2026
+
+- `twitch-donation-panel-text-examples.html` targets copy-and-template intent without duplicating the Twitch setup guide.
+- `cash-app-scams-streamers.html` targets streamer payment-safety intent and uses current Cash App and FTC guidance.
+- `ally-coverdraft-direct-deposit.html` targets the standard-versus-expanded CoverDraft path and warns that creator-platform payouts may not qualify.
+- Existing pillar pages now link to the appropriate supporting articles, and all three articles link back to their pillar guide.
+- Three relevant recovered Psyche/Kimi websites have a staged resource strip; publication remains gated on local visual QA and explicit approval.

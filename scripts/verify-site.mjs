@@ -9,6 +9,9 @@ const publicPages = [
   'cash-app-streamers.html',
   'ally-creator-cashflow.html',
   'how-to-add-cash-app-to-twitch.html',
+  'twitch-donation-panel-text-examples.html',
+  'cash-app-scams-streamers.html',
+  'ally-coverdraft-direct-deposit.html',
   'about.html',
   'editorial-standards.html'
 ];
@@ -43,6 +46,8 @@ for (const page of publicPages) {
   }
 
   const hrefs = [...html.matchAll(/href="([^"]+)"/gi)].map((match) => match[1]);
+  const internalLinks = hrefs.filter((href) => !/^(?:https?:|mailto:|#)/i.test(href));
+  check(internalLinks.length >= 3, `${page}: expected at least three internal links, found ${internalLinks.length}`);
   for (const href of hrefs) {
     if (/^(?:https?:|mailto:|#)/i.test(href)) continue;
     const localPath = href.split('#')[0].split('?')[0];
